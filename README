@@ -1,0 +1,4 @@
+This system provides a standard UI for developers as well as the users and
+a protocol which is independent of the underlying communication standards
+so that it  can be used with any data transmission technology. It also
+provides a technique for remote processing of commands
