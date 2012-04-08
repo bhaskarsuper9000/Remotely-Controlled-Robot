@@ -1,0 +1,5 @@
+gcc -o reg $(mysql_config --cflags) register.c $(mysql_config --libs)
+
+INSERT INTO `zandu`.`sendtobot` (`bot_id`, `uid`, `time_stamp`, `command`) VALUES ('66', 'apollo', CURRENT_TIMESTAMP, 'F');
+
+INSERT INTO `zandu`.`botinfo` (`bot_id`, `sid`, `sensor`, `port_io`, `theta`, `vector`, `l_vel`, `r_vel`) VALUES ('65', '1101', '110:210:134:32:65:92:231:0:0','0:210:134:32:65:92:231:0:0:122:22:84', '200', '200', '10', '10');

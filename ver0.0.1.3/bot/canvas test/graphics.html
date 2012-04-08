@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Test</title>
+	
+	<script type="text/javascript" src="cvsGraphCtx1v08.js"></script>
+	<script type="text/javascript" src="canvastext.js"></script>
+	<script type="text/javascript" src="rgbaColor.js"></script>
+	<script type="text/javascript" src="cvsPlotUtils-01.js"></script>
+	
+  </head>
+<body>
+  <section>
+    <div>
+        <canvas id="canvas" width="300" height="300">
+         OOPS!!!! POPAT Your Browser Doesnt Support HTML5
+        </canvas>
+    </div>
+
+	<script type="text/javascript">
+
+	function init() {
+	  drawLine("canvas");
+	}
+	
+	function drawLine(cvsID)
+	{
+	  var g = new CvsGraphCtx(cvsID);
+	  with (g)
+	  {
+		setViewport(0, 0, 100, 100);        // full canvas
+		fillViewport("#f0f0d0");
+		setWorldCoords(10, 10, 10, 10);
+		/*setViewport(16, 6, 80, 77);  // data area
+		setWorldCoords(0, 15, -0.5, 1.2);
+		setPenColor("#000000");      // black pen*/
+		drawAxes(10,10, 0, 15, -0.5, 1.2, 1, 0.1, 5, 0.5);
+		/*label("x", 14.5, -0.1, 2, 0, 12);
+		label("j0(x)", 10.5, 1.2, 6, 0, 10);
+		label("j1(x)", 10.5, 1, 6, 0, 10);
+		setPenColor("#ff0000");
+		move(11, 1.2);
+		line(12, 1.2);
+		// plot j0(x)
+		move(0, 1);
+		for(var i=0.2; i<=15; i+=0.2)
+		  line(i, Math.sin(i)/i);
+		setPenColor("#00ff00");
+		move(11, 1);
+		line(12, 1);
+		// plot j1(x)
+		move(0, 0);
+		for(i=0.2; i<=15; i+=0.2)
+		  line(i, Math.sin(i)/(i*i)-Math.cos(i)/i);*/
+	  }
+	}
+
+	init();
+	</script>
+
+  </section>
+</body>
+</html>

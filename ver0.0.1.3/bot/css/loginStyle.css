@@ -1,0 +1,27 @@
+/* **************** GRIDS ***************** */
+.line, .lastUnit {overflow: hidden;_overflow:visible;_zoom:1; }
+.unit{float:left;_zoom:1;}
+.unitExt{float:right;}
+.size1of1{float:none;}
+.size1of2{width:50%;}
+.size1of3{width:33.33333%;}
+.size2of3{width:66.66666%;}
+.size1of4{width:25%;}
+.size3of4{width:75%;}
+.size1of5{width:20%;}
+.size2of5{width:40%;}
+.size3of5{width:60%;}
+.size4of5{width:80%;}
+.lastUnit {float:none;_position:relative; _left:-3px; _margin-right: -3px;width:auto;}
+/* extending grids to allow a unit that takes the width of its content */
+.media{width:auto;}
+.login{float:none;height:auto;border:1px #000000 solid;margin:15px 5px 15px 10px;padding:10px;-moz-border-radius:5px;	border-radius: 5px;}
+.updates {float:none;height:auto;border:1px #000000 solid;margin:15px 5px 15px 10px;padding:10px;-moz-border-radius:5px;	border-radius: 5px;}
+.updates  #message {border:3px #0b75b2 solid;height:50px;-moz-border-radius:5px;	border-radius: 5px;}
+.loginContent{float:none;height:auto;padding:5px;margin:5px;}
+.loginContent #uid,#pswd {padding:5px;}
+.loginBoxButton {width:50%;height:auto;margin:10px 5px 5px 35px;}
+.loginBoxButton #submit {padding:5px;font-weight:bold;color:white;background-color:#0b75b2;border:2px ;-moz-border-radius:5px;	border-radius: 5px;}
+.registerDesign a{font-weight:bold;color:white;width:100px;height:50px;background-color:#0b75b2;padding:5px;border:2px ;-moz-border-radius:5px;	border-radius: 5px;}
+.registerDesign a:hover {text-decoration:none;}
+.sep {float:left; width: 500px;}

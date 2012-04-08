@@ -1,0 +1,60 @@
+<html>
+
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript" language="javascript">
+				$(function(){
+					$("#avail li").click(function(){	
+								$(this).fadeOut();
+								$.post("out.php",{name:"uddhav"},function(data)
+								{$("#botsInUse ").append(data)});
+								
+																			
+					});	
+					
+					$("#botsInUse li").click(function(){	
+								$(this).fadeOut();
+								$.post("out.php",{name:"uddhav"},function(data)
+								{$("#avail ").append(data)});
+								
+																			
+					});	
+					
+					
+								
+				});		
+						
+				
+				
+		
+		</script>
+		
+	
+	</head>
+	<body>
+			
+			<div  style="border:1px solid #000000;">
+							
+					<ul id="avail">
+							
+								<li>Uddhav -> </li>
+								<li>Uddhav -> </li>	
+								<li>Uddhav -> </li>							
+							
+					</ul>
+			
+			</div>	
+			
+			<br/><hr/><br/>
+			<div id="inUse" style="border:1px solid #000000;">
+					<ul id="botsInUse">
+						<li>kjhdjkdf</li>	
+						<li>kjhdjkdf</li>	
+						<li>kjhdjkdf</li>	
+									
+					</ul>
+			
+			</div>	
+			
+	</body>
+</html>

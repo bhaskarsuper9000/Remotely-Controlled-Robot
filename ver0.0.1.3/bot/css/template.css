@@ -1,0 +1,20 @@
+/* **************** TEMPLATE ***************** */
+/* ====== Page Head, Body, and Foot ====== */
+body{_text-align:center;}/* IE5.5 */
+.body{overflow:hidden; _overflow:visible; _zoom:1;}
+.page{margin: 0 auto; width: 90%;_text-align:left;} /* wraps other template elems to set width */ /* text-align IE5.5 */
+/* "old school" and "liquid" extend page to allow for different page widths */
+.oldSchool{width:auto;}
+.gs960{width:960px;}
+.liquid{extends:.page; width: auto;margin:0;}
+
+/* ====== Columns ====== */
+.main{overflow: hidden;_overflow:visible;_zoom:1;padding:10px;margin:10px;border:1px #000000 solid;height:722px;}
+.adjustMain{overflow: hidden;_overflow:visible;_zoom:1;padding:10px;margin:10px;border:1px #000000 solid;height:auto;}
+.leftCol{float:left; width:250px;_margin-right:-3px;padding:10px;}
+.rightCol{float:right; width: 300px;_margin-left:-3px;padding:10px;}
+/* extend columns to allow for common column widths */
+.gMail{width:160px;}
+.gCal{width:180px;}
+.yahoo{width:240px;}
+.myYahoo{width:300px;}

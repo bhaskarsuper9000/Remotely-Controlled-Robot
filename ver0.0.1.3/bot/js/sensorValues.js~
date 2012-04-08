@@ -1,0 +1,44 @@
+
+
+(function($) {
+	$.fn.togglethis = function () {
+		$(this).load('./rcvdValues/voltage.txt', function() {
+			$(this).delay(1000).togglethis();
+			return $(this);
+		});
+		
+	}
+})(jQuery);
+$(document).ready(function() {
+	$(".irValue p").togglethis();
+});
+
+
+
+(function($) {
+	$.fn.togglethis = function () {
+		$(this).load('./rcvdValues/voltage.txt', function() {
+			$(this).delay(100000000).togglethis();
+			return $(this);
+		});
+		
+	}
+})(jQuery);
+$(document).ready(function() {
+	$(".lineValue p").togglethis();
+});
+
+
+
+(function($) {
+	$.fn.togglethis = function () {
+		$(this).load('./rcvdValues/voltage.txt', function() {
+			$(this).delay(100000000).togglethis();
+			return $(this);
+		});
+		
+	}
+})(jQuery);
+$(document).ready(function() {
+	$(".disVec p").togglethis();
+});

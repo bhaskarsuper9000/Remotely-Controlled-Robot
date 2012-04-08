@@ -1,0 +1,20 @@
+<?php
+	
+	session_start();
+	if(isset($_SESSION['uid']))
+?>
+	<html>
+		<head>
+				<title>Firebird V</title>
+				<?php	include('header.php');	?>
+		
+		</head>
+		<body onload="init();" onkeyup="handleKeyUp(event);">
+		
+				<?php	include('body.php');	?>
+		
+		</body>	
+	</html>
+<?php
+
+?>

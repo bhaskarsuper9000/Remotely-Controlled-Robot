@@ -1,0 +1,90 @@
+/*Used for encoder calculations*/
+
+function calcBotPosition(){
+
+	var sensorVal = botInfo[2];
+	sensorVal = sensorVal.split(":");
+	lCount = sensorVal[7];
+	rCount = sensorVal[8];
+
+	if( (keys[39] - keys[37] == 0) && ( keys[40] - keys[38] == -4) ){			//forward
+
+		if(lCount == rCount){
+			dist += parseFloat(lCount) * 12.92;	//in mm
+		}
+		else if(lCount < rCount){
+			dist += parseFloat(lCount) * 12.92;	//in mm
+			theta += parseFloat((rCount-lCount))*6.42;	//in degrees
+			dist += Math.sqrt( 6728 - 6728 * Math.cos(parseFloat((rCount-lCount))*6.42) );	//in mm (by cosine rule)
+		}
+		else{
+			dist += parseFloat(rCount) * 12.92;	//in mm
+			theta -= parseFloat((lCount-rCount))*6.42;	//in degrees
+			dist += Math.sqrt( 6728 - 6728 * Math.cos(parseFloat((lCount-rCount))*6.42) );	//in mm (by cosine rule)
+		}
+
+	}
+	else if( (keys[39] - keys[37] == 0) && ( keys[40] - keys[38] == 4) ){		//backward
+
+		if(lCount == rCount){
+			dist -= parseFloat(lCount) * 12.92;	//in mm
+		}
+		else if(lCount < rCount){
+			dist -= parseFloat(lCount) * 12.92;	//in mm
+			theta -= parseFloat((rCount-lCount))*6.42;	//in degrees
+			dist -= Math.sqrt( 6728 - 6728 * Math.cos(parseFloat((rCount-lCount))*6.42) );	//in mm (by cosine rule)
+		}
+		else{
+			dist -= parseFloat(rCount) * 12.92;	//in mm
+			theta += parseFloat((lCount-rCount))*6.42;	//in degrees
+			dist -= Math.sqrt( 6728 - 6728 * Math.cos(parseFloat((lCount-rCount))*6.42) );	//in mm (by cosine rule)
+		}
+
+	}
+	else if( (keys[39] - keys[37] == -4) && ( keys[40] - keys[38] == 0) ){		//left
+	
+		if(lCount == rCount){
+			theta += parseFloat(lCount) * 12.85;	//in degrees
+		}
+		else if(lCount < rCount){
+			theta += parseFloat(lCount)*12.85;	//in degrees
+			theta += parseFloat((rCount-lCount))*6.42;	//in degrees
+			dist += Math.sqrt( 6728 - 6728 * Math.cos(parseFloat((rCount-lCount))*6.42) );	//in mm (by cosine rule)
+		}
+		else{
+			theta += parseFloat(rCount)*12.85;	//in degrees
+			theta += parseFloat(lCount - rCount)*6.42;	//in degrees
+			dist -= Math.sqrt( 6728 - 6728 * Math.cos(parseFloat(lCount-rCount)*6.42) );	//in mm (by cosine rule)
+		}
+	
+	}
+	else if( (keys[39] - keys[37] == 4) && ( keys[40] - keys[38] == 0) ){		//right
+
+		if(lCount == rCount){
+			theta -= parseFloat(lCount) * 12.85;	//in degrees
+		}
+		else if(lCount < rCount){
+			theta -= parseFloat(lCount)*12.85;	//in degrees
+			theta -= parseFloat(rCount-lCount)*6.42;	//in degrees
+			dist -= Math.sqrt( 6728 - 6728 * Math.cos(parseFloat(rCount-lCount)*6.42) );	//in mm (by cosine rule)
+		}
+		else{
+			theta -= parseFloat(rCount)*12.85;	//in degrees
+			theta -= parseFloat(lCount - rCount)*6.42;	//in degrees
+			dist += Math.sqrt( 6728 - 6728 * Math.cos(parseFloat(lCount-rCount)*6.42) );	//in mm (by cosine rule)
+		}
+	
+	}
+
+	x = parseInt(dist * Math.cos(theta));
+	y = parseInt(dist * Math.sin(theta));
+/*	var newBotInfo = "";
+
+	for(var i=0; i < 7; i++){
+		newBotInfo = newBotInfo + sensorVal[i] + ":";
+	}
+	newBotInfo += "0:0";
+	botInfo[2] = newBotInfo;
+*/
+	//draw(scale,x,y);
+}

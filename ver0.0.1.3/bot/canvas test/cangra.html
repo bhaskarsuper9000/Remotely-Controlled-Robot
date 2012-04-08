@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Test</title>
+	
+	<script type="text/javascript" src="cvsGraphCtx1v08.js"></script>
+	<script type="text/javascript" src="canvastext.js"></script>
+	<script type="text/javascript" src="rgbaColor.js"></script>
+	<script type="text/javascript" src="cvsPlotUtils-01.js"></script>
+	
+  </head>
+<body>
+  <section>
+    <div>
+        <canvas id="canvas" width="300" height="300">
+         OOPS!!!! POPAT Your Browser Doesnt Support HTML5
+        </canvas>
+    </div>
+
+	<script type="text/javascript">
+	
+
+	function init() {
+	  return setInterval(draw, 1200);
+	}
+
+	function drawHullo(canvas)         // the canvas ID is passed in as a string
+	{
+	  var g = new CvsGraphCtx(canvas);  // create a graphics context
+
+	  g.clearCanvas();                // clear all previous drawing and text
+	  g.setViewport(15, 10, 50, 50); // define square viewport width=50% of canvas width
+	  g.fillViewport("#eeeeb0");     // fill viewport with pale yellow
+	  g.setWorldCoords(0, 1, 0, 50); // scale x axis 0 to 1, and y axis 0 to 50
+	  g.setPenColor("#ff0000");      // use red pen
+	  g.label("Hullo World", 0.5, 25, 5, 20, 15);  // x=0.5, y=25, lorg=5, rotate 0°, 15pt font
+	}
+	
+	function draw() {
+	
+		drawHullo(canvas);;
+	
+	}
+	
+	init();
+	</script>
+
+  </section>
+</body>
+</html>

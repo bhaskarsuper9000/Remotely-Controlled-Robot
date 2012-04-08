@@ -1,0 +1,40 @@
+				$(function(){
+					$("#avail li").click(function(){	
+								$(this).fadeOut();
+								b_val = $(this).text();
+								$.post("updateBotStatus.php",{b_name:b_val},function(data)
+								{  $("#botsInUse ").append(data); } );
+																	
+					});
+					
+					$("#botsInUse li").click(function(){	
+								$(this).fadeOut();
+								b_val = $(this).text();
+								$.post("updateBotStatus.php",{b_name:b_val},function(data)
+								{  $("#botsInUse ").append(data); } );
+																			
+					});
+					
+					
+				});		
+						
+				/*Currently of no use : date = 14 nov 2011 
+				
+				function addToUseBot(content)
+				{
+					parDiv = document.getElementById('botsInUse');
+					childEl = document.createElement('li');
+					
+					parDiv.appendChild(childEl);	
+					
+								
+				}
+				function addToAvailBot(content)
+				{
+					parDiv = document.getElementById('avail');
+					childEl = document.createElement('li');
+					
+					parDiv.appendChild(childEl);	
+					
+								
+				}*/

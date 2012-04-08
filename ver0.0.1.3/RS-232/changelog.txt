@@ -1,0 +1,9 @@
+This section is done with new database (updated) "ZANDU".
+This folder includes the program which helps in sending the string data from the server zigbee and will recieve proper steing data.
+send.c working fine
+->integrated with zandu database
+->bot motion working.currently no bug in it.
+->
+
+ver 0.0.1.2
+Another daemon just for registering the bots is made

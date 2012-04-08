@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Test</title>
+	
+	<script type="text/javascript" src="cvsGraphCtx1v08.js"></script>
+	<script type="text/javascript" src="canvastext.js"></script>
+	<script type="text/javascript" src="rgbaColor.js"></script>
+	
+  </head>
+<body>
+  <section>
+    <div>
+        <canvas id="canvas" width="300" height="300">
+         OOPS!!!! POPAT Your Browser Doesnt Support HTML5
+        </canvas>
+    </div>
+
+	<script type="text/javascript">
+	var canvas;  //Canvas variable
+	var ctx;	//Context variable
+	/*Rectangle specification*/
+	var WIDTH = 300;
+	var HEIGHT = 300; 
+
+	function circle(x,y,r) {
+	  ctx.beginPath();
+	  ctx.arc(x, y, r, 0, Math.PI*2, true);
+	  ctx.fill();
+	}
+
+	function rect(x,y,w,h) {
+	  ctx.beginPath();
+	  ctx.rect(x,y,w,h);
+	  ctx.closePath();
+	  ctx.fill();
+	}
+
+	function getReatCoords(){
+		ctx.translate(0,300);
+		ctx.scale(1,-1);
+	}
+	 
+	function clear() {
+	  ctx.clearRect(0, 0, WIDTH, HEIGHT);
+	}
+
+	function init() {
+	  canvas = document.getElementById("canvas");
+	  ctx = canvas.getContext("2d");
+	  return setInterval(draw, 1200);
+	  //draw();
+	}
+
+
+	function draw() {
+	  clear();
+	  ctx.fillStyle = "#FAF7F8";
+	  rect(0,0,WIDTH,HEIGHT);
+	  
+	  ctx.fillStyle = "#444444";
+	  var x = Math.floor(Math.random() * (286 - 15 + 1)) + 15;
+	  var y = Math.floor(Math.random() * (286 - 15 + 1)) + 15;
+	  getReatCoords();
+	  circle(x, y, 5);
+	  
+	  ctx.fillStyle = "#FF0000";
+	  var x = Math.floor(Math.random() * (286 - 15 + 1)) + 15;
+	  var y = Math.floor(Math.random() * (286 - 15 + 1)) + 15;
+	  circle(x, y, 5);
+	  
+	  getReatCoords();
+	  ctx.beginPath();  
+	  ctx.moveTo(10,10);  
+	  ctx.lineTo(10,290); 
+	  ctx.closePath();  
+	  ctx.stroke();
+	  ctx.beginPath();  
+	  ctx.moveTo(10,10);  
+	  ctx.lineTo(5,20); 
+	  ctx.closePath();  
+	  ctx.stroke();
+	  ctx.beginPath();  
+	  ctx.moveTo(10,10);  
+	  ctx.lineTo(15,20); 
+	  ctx.closePath();  
+	  ctx.stroke();
+
+	  ctx.beginPath();  
+	  ctx.moveTo(10,290);  
+	  ctx.lineTo(290,290); 
+	  ctx.closePath();  
+	  ctx.stroke();
+	  ctx.beginPath();  
+	  ctx.moveTo(290,290);  
+	  ctx.lineTo(280,285); 
+	  ctx.closePath();  
+	  ctx.stroke();
+	  ctx.beginPath();  
+	  ctx.moveTo(290,290);  
+	  ctx.lineTo(280,295); 
+	  ctx.closePath();  
+	  ctx.stroke();
+	  
+	}
+	
+	init();
+	</script>
+
+  </section>
+</body>
+</html>

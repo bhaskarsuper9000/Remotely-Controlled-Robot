@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Sandbox</title>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<style type="text/css" media="screen">
+#dot { width:16px; height:16px; position:absolute; background-color:blue; }
+</style>
+</head>
+<body>
+  Use the arrow keys to move the box.
+
+  <div id="dot" style="left:100px; top:100px"></div>
+  <script>
+  var MIN_DELTA = 4; // pixels to move by
+  
+  function move(deltaX, deltaY) {
+    var dot = document.getElementById('dot');
+    if(deltaX) {
+      dot.style.left = (parseInt(dot.style.left, 10) || 0) + deltaX + 'px';
+    }
+    
+    if (deltaY) {
+      dot.style.top = (parseInt(dot.style.top, 10) || 0) + deltaY + 'px';
+    }
+    //alert(deltaX +","+ deltaY+" ");
+  }
+  
+  var keys = { /*up*/38:0, /*down*/40:0, /*left*/37:0, /*right*/39:0 };
+  
+  document.addEventListener('keydown', function(e) {
+    if(e.keyCode in keys) {
+      keys[e.keyCode] = MIN_DELTA;
+      move(keys[39] - keys[37], keys[40] - keys[38])
+    }
+  }, false);
+  
+  document.addEventListener('keyup', function(e) {
+    if(e.keyCode in keys) {
+      keys[e.keyCode] = 0;
+      move(keys[39] - keys[37], keys[40] - keys[38])
+    }
+  }, false);
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+
+
+
+(function($) {
+	$.fn.togglethis = function () {
+		$(this).load('text.txt', function() {
+			$(this).delay(100000000).togglethis();
+			return $(this);
+		});
+		
+	}
+})(jQuery);
+$(document).ready(function() {
+	$(".voltage").togglethis();
+});
+
+</script>
+</head>
+<body>
+
+<div class="voltage" ><p>Let AJAX change this text</p></div>
+<button>Change Content</button>
+
+</body>
+</html>
+
+

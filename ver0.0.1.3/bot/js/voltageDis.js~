@@ -1,0 +1,12 @@
+(function($) {
+	$.fn.togglethis = function () {
+		$(this).load('text.txt', function() {
+			$(this).delay(1000).togglethis();
+			return $(this);
+		});
+		
+	}
+})(jQuery);
+$(document).ready(function() {
+	$(".voltage p").togglethis();
+});

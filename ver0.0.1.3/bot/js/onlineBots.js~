@@ -1,0 +1,12 @@
+(function($) {
+	$.fn.togglethis = function () {
+		$(this).delay(1000).load('text.txt', function() {
+			$(this).togglethis();
+			return $(this);
+		});
+		
+	}
+})(jQuery);
+$(document).ready(function() {
+	$(".all_onlineBots li").togglethis();
+});

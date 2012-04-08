@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Firebird V</title>
+
+<link rel="stylesheet" type="text/css" media="all"  href="./css/libraries.css" />
+<link rel="stylesheet" type="text/css" media="all"  href="./css/template.css" />
+<!--<link rel="stylesheet" type="text/css" media="all"  href="../css/template_debug.css" />-->
+<link rel="stylesheet" type="text/css" media="all" href="./css/grids.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/content.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/mod.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/mod_skins.css" />
+<link rel="stylesheet" type="text/css" media="all" href="./css/ugly.css" />
+<link rel="stylesheet" href="./css/demos.css">
+<link rel="stylesheet" href="./css/jquery.ui.all.css">
+
+<script src="./js/jquery-1.6.2.js"></script>
+<script src="./js/jquery.ui.core.js"></script>
+<script src="./js/jquery.ui.widget.js"></script>
+<script src="./js/jquery.ui.mouse.js"></script>
+<script src="./js/jquery.ui.slider.js"></script>
+<script src="./js/jquery.ui.tabs.js"></script>
+<script src="./js/xandu_canvas.js"></script>
+
+<style>
+	#demo-frame > div.demo { padding: 10px !important; };
+</style>
+<script>
+	$(function() {
+		$( "#tabs" ).tabs();
+	});
+	
+	$(function() {
+		$( "#left_slider-vertical" ).slider({
+			orientation: "vertical",
+			range: "min",
+			min: 0,
+			max: 255,
+			value: 10,
+			slide: function( event, ui ) {
+				$( "#left_amount" ).val( ui.value );
+			}
+		});
+		$( "#left_amount" ).val( $( "#left_slider-vertical" ).slider( "value" ) );
+	});
+	
+	$(function() {
+		$( "#right_slider-vertical" ).slider({
+			orientation: "vertical",
+			range: "min",
+			min: 0,
+			max: 255,
+			value: 10,
+			slide: function( event, ui ) {
+				$( "#right_amount" ).val( ui.value );
+			}
+		});
+		$( "#right_amount" ).val( $( "#right_slider-vertical" ).slider( "value" ) );
+	});
+</script>
+
+</head>
+
+<body onload="init();" onkeyup="handleKeyUp(event);">
+<div class="page">
+	<div class="head">
+		
+		<h3 align="center">Firebird V</h3>
+		
+	</div>
+	<div class="body">
+	
+		<div class="leftCol yahoo">
+		
+			<div class="all_onlineBots">
+				<div class="line">
+			 				<div class="unit chatSize">
+		       		 		<h3>Online Bots</h3><hr/>
+		        				<ul>
+		        						<li><img src="./images/online.gif">Uddhav Arote 12</li>
+		        						<li><img src="./images/online.gif">Uddhav Arote 12</li>
+		        						<li><img src="./images/online.gif">Uddhav Arote 12</li>
+												<li><img src="./images/online.gif">Uddhav Arote 12</li>
+		        				
+		        				</ul>
+	    	  				</div>			  
+					</div>
+
+			</div>
+			
+			<div class="inUseBots"> 
+		
+						<div class="line">
+			 				<div class="unit chatSize">
+		       		 		<h3>Bots in use</h3><hr/>
+		        					<ul>
+		        						<li></li>
+		        						<li></li>
+		        						<li></li>
+										<li></li>
+		        				
+		        				</ul>
+	    	  				</div>			  
+						</div>				
+					
+			 </div>
+			    
+			    <div class="messages">
+			    	
+			    		<div class="line">
+			 				<div class="unit msgSize">
+		       		 		<h3>Server Messages</h3><hr/>
+		        				<p>Messages from the server..</p>
+	    	  				</div>			  
+						</div>
+			    </div>
+			
+			
+			
+		</div> <!-- end of left column-->
+<!-- ============================================================================================================================ -->		
+		<div class="rightCol myYahoo">
+			
+			<div class="graph_desc">		
+				<div class="line">
+					<div class="unit canvasSize">
+				<section>
+    <div>
+        <canvas id="canvas" width="285" height="295">
+        No browser support for  HTML5!!<br/>
+        </canvas>
+    </div>
+
+  </section>
+  					</div> <!-- end of unit  -->
+  				</div> <!-- end of line class -->
+			</div><!-- end of canvas div -->
+			
+			<div class="values">
+				
+				<div class="line">
+			 		<div class="unit size1of1">
+		       		 <h3>IR sensors values</h3>
+		        		<p>Values of 8 IR sensors...</p>
+	    	  		</div>			  
+				</div>
+					
+				<div class="line">
+			 		<div class="unit size1of1">
+		       		 <h3>White Line sensors</h3>
+		        		<p>values of the white line sensors...</p>
+	    	  		</div>			  
+				</div>
+				
+				<div class="line">
+			 		<div class="unit size1of1">
+		       		 <h3>Distance (vector form)</h3>
+		        		<p>Distance in the vector form ...</p>
+	    	  		</div>			  
+				</div>	
+			</div><!-- end of values div -->
+			
+			<div class="voltage">
+			
+				<div class="line">
+			 		<div class="unit newSize">
+		       		 <h3>Voltage </h3><hr/>
+		   
+		        				
+		        				
+	    	  		</div>			  
+				</div>	
+					
+					
+			</div>
+			
+		</div> <!-- end of right column-->
+	
+<!-- =============================================================================================================================== -->	
+		
+		<div class="main oldschool">
+			
+		<!-- ==================================================================== -->			
+				<div class="demo">
+		<!-- ==================================================================== -->
+					<div id="tabs">
+						<ul>
+							<li><a href="#tabs-1">Motion Control</a></li>
+							<li><a href="#tabs-2">Port IO</a></li>
+							<li><a href="#tabs-3">Batch Processing</a></li>
+						</ul>
+		<!-- ==================================================================== -->
+						<div id="tabs-1">
+							
+								<div class="line">
+								
+			 						<div class="unit size1of5">
+		       		 				<h3>Left motor</h3><hr/>
+		        							<div>        								
+												<div id="left_slider-vertical" style="height:125px;margin:0px 0px 0px 45px;"></div>
+												<p>
+													<label for="left_amount"style="color:#000000; font-weight:bold;" >Left Velocity </label>
+													<input type="text" size="10" id="left_amount" style="border:0; color:#f6931f; font-weight:bold;" align="center"/>
+												</p>
+											</div>
+	    	  						</div>	
+	    	  						
+	    	  						<div class="unit size1of2">
+		       		 				<h3 align="center">Bot Controls</h3><hr/>
+		       		 				
+		        							<div class="line" align="center">
+			 									<div class="unit size1of3"></div>
+			 									<div class="unit size1of3"><img src="./images/up.png"/></div>
+			 									<div class="unit lastUnit"></div>			  
+											</div>
+											
+											<div class="line" align="center">
+			 									<div class="unit size1of3"><img src="./images/left.png"/></div>
+			 									<div class="unit size1of3"></div>
+			 									<div class="unit lastUnit"><img src="./images/right.png"/></div>			  
+											</div>
+											
+											<div class="line" align="center">
+			 									<div class="unit size1of3"></div>
+			 									<div class="unit size1of3"><img src="./images/down.png"/></div>
+			 									<div class="unit lastUnit"></div>			  
+											</div>
+											
+											
+	    	  						</div>	
+	    	  						
+	    	  						<div class="unit size1of5">
+		       		 				<h3>Right motor</h3><hr/>
+		        							<div>        								
+												<div id="right_slider-vertical" style="height:125px;margin:0px 0px 0px 45px;"></div>
+												<p>
+													<label for="right_amount"style="color:#000000; font-weight:bold;" >Right Velocity </label>
+													<input type="text" size="10" id="right_amount" style="border:0; color:#f6931f; font-weight:bold;" align="center"/>
+												</p>
+											</div>
+	    	  						</div>			  
+								</div>
+						</div>
+		<!-- ==================================================================== -->
+						<div id="tabs-2">
+							<p></p>
+						</div>
+						
+		<!-- ==================================================================== -->
+						<div id="tabs-3">
+							<p></p>
+						</div>
+						
+		<!-- ==================================================================== -->
+					</div><!-- end tabs -->
+		<!-- ==================================================================== -->
+				</div><!-- End demo -->
+
+		<!-- ==================================================================== -->			
+		</div><!-- end of main content-->
+		
+		
+	</div><!-- end of body -->
+	
+	
+	<div class="foot">
+		
+	</div><!-- end  of footer -->	
+</div><!-- end of page -->
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Test</title>
+	
+	<script type="text/javascript" src="cvsGraphCtx1v08.js"></script>
+	<script type="text/javascript" src="canvastext.js"></script>
+	<script type="text/javascript" src="rgbaColor.js"></script>
+	<script type="text/javascript" src="cvsPlotUtils-01.js"></script>
+	
+  </head>
+<body>
+  <section>
+    <div>
+        <canvas id="canvas" width="300" height="300">
+         OOPS!!!! POPAT Your Browser Doesnt Support HTML5
+        </canvas>
+    </div>
+
+		<script src="http://www.html5canvastutorials.com/libraries/kinetic2d-v1.0.2.js">
+		</script>
+		<script>
+			window.onload = function(){
+				var kin = new Kinetic_2d("myCanvas");
+		 
+				// set drawStage method
+				kin.setDrawStage(function(){
+					// update stage
+					// clear canvas
+					// draw stage
+				});
+				// start animation
+				kin.startAnimation();
+			}
+		</script>
+
+  </section>
+</body>
+</html>

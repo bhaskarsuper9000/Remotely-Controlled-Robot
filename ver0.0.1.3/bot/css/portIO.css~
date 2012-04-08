@@ -1,0 +1,18 @@
+#buzzer
+{
+	color:#000000;
+	-moz-box-shadow: 0px 0px 10px #343434;
+	-webkit-box-shadow: 0px 0px 10px #343434;
+	-o-box-shadow: 0px 0px 10px #343434;
+	box-shadow: 0px 0px 10px #343434;
+	-moz-border-radius: 70px;
+	-webkit-border-radius: 70px;
+	border-radius: 70px;
+	border: 1px solid #656565;
+	background:#68cbd0;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="68cbd0", endColorstr="656565"); /* Pour IE seulement et mode gradient à linear */
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#68cbd0), to(#656565));
+	background-image: -moz-linear-gradient(top center, #68cbd0, #656565);
+	background-image: -o-linear-gradient(top, #68cbd0, #656565); /*uniquement en mode linear*/
+}
+

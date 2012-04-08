@@ -1,0 +1,61 @@
+  body {
+
+                margin: 0px;
+
+                padding: 0px;
+
+            }
+
+            
+
+            #wrapper {
+
+                position: relative;
+
+                border: 1px solid #9C9898;
+
+                width: 285px;
+
+                height: 295px;
+
+            }
+
+            
+
+            #buttonWrapper {
+
+                position: absolute;
+
+                width: 30px;
+
+                top: 2px;
+
+                right: 2px;
+
+            }
+
+            
+
+            input[type =
+
+            "button"] {
+
+                padding: 5px;
+
+                width: 30px;
+
+                margin: 0px 0px 2px 0px;
+
+            }
+            
+ 
+.welcome
+{
+	margin-top: 5px;
+	float:left;
+	width:403px;
+	border: 1px solid #9C9898;
+	border-radius: 10px;
+}
+
+
