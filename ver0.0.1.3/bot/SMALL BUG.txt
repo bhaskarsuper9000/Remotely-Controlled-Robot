@@ -1,4 +1,0 @@
-It`s not a bug actually : 
-
-See the current scenario is that you can add the bots to the divs "AVAILABLE" and "BOTSINUSE" alternatively,but problem is, for the added li items the same 
-property (of on click event) is not obeyed.So if you try clicking the li element which was moved to say 'botsInUse' div will not go back to 'avail' div ...but will go on refreshing the page.

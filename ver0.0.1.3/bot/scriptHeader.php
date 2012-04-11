@@ -16,6 +16,7 @@
 <script src="./js/ourScripts/botStatus.js"></script>
 <script src="./js/ourScripts/slider.js"></script>
 <script src="./js/ourScripts/handleKeyEvent.js"></script>
+<script src="./js/ourScripts/handleMouseEvent.js"></script>
 <script src="./js/ourScripts/botPosition.js"></script>
 <script src="./js/ourScripts/portIO.js"></script>
 

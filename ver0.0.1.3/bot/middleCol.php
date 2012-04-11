@@ -24,7 +24,7 @@
 												<div id="left_slider-vertical" style="height:125px;margin:0px 0px 0px 45px;"></div>
 												<p align="center">
 													<label for="left_amount" style="color:#000000;" >Left Velocity </label>
-													<input type="text" size="10" id="left_amount" style="border:0; color:#f6931f; font-weight:bold;" align="center"/>
+													<input type="text" size="10" id="left_amount" style="border:0; color:#f6931f; font-weight:bold;"align="center">
 												</p>
 											</div>
 	    	  						</div>	
@@ -34,19 +34,19 @@
 		       		 				
 		        							<div class="line" align="center" style="border:none;">
 			 									<div class="unit size1of3"></div>
-			 									<div class="unit size1of3"><img src="./images/up.png"/></div>
+			 									<div class="unit size1of3"><img id="up" src="./images/up.png"/></div>
 			 									<div class="unit lastUnit"></div>			  
 											</div>
 											
 											<div class="line" align="center">
-			 									<div class="unit size1of3"><img src="./images/left.png"/></div>
-			 									<div class="unit size1of3"></div>
-			 									<div class="unit lastUnit"><img src="./images/right.png"/></div>			  
+			 									<div class="unit size1of3"><img id="left" src="./images/left.png"/></div>
+			 									<div class="unit size1of3"><img id="stop" src="./images/stop.png"/></div>
+			 									<div class="unit lastUnit"><img id="right" src="./images/right.png"/></div>		  
 											</div>
 											
 											<div class="line" align="center">
 			 									<div class="unit size1of3"></div>
-			 									<div class="unit size1of3"><img src="./images/down.png"/></div>
+			 									<div class="unit size1of3"><img id="down" src="./images/down.png"/></div>
 			 									<div class="unit lastUnit"></div>			  
 											</div>
 											

@@ -16,3 +16,6 @@ var rCount = 0;
 var dist = 0, theta = 0, alpha = 0;
 var botX = 0; botY = 0;
 
+/* daemon.js */
+var botId = -1;
+

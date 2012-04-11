@@ -4,7 +4,7 @@
 .unitExt{float:right;}
 .size1of1{float:none;border:1px #000000 solid;margin:10px;height:70px;}
 .size1of2{width:50%;border:1px #000000 solid;margin:5px 10px 5px 10px;height:275px;}
-.size1of3{width:33.33333%;/*border:1px #fff solid*/;margin:3px 2px 3px 2px;}
+.size1of3{width:33.33333%;/*border:1px #fff solid*/height:68px;margin:3px 2px 3px 2px;}
 .size2of3{width:66.66666%;border:1px #000000 solid;}
 .size1of4{width:25%;border:1px #000000 solid;}
 .size3of4{width:75%;border:1px #000000 solid;}

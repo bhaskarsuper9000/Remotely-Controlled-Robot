@@ -31,6 +31,10 @@
 						break ;
 				
 				case '0:0':
+						$action='S';
+						break;
+						
+				default:
 						$action='@';
 						break;
 			}

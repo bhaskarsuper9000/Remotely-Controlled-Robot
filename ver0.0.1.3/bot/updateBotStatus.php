@@ -30,9 +30,9 @@
 	}
 	
 	if(strcmp($id,'avail'))
-		echo "<li><h3 style=\'background-color:green;\'>{$b_name}</h3></li>";
+		echo "<li><h3 style='color:green;'>{$b_name}</h3></li>";
 	else if(strcmp($id,'botsInUse'))
-		echo "<li><h3 style=\'background-color:red;\'>{$b_name}</h3></li>";
+		echo "<li><h3 style='color:red;'>{$b_name}</h3></li>";
 		
 	$X->closeConnection($con);
 	

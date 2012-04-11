@@ -1,16 +1,16 @@
 <?php
 
-	include('Database.php');
+	
 		$X = new DatabaseCon;
 		$con = $X->connect();
 		$X->selectDB("zandu",$con);
 		
-		$stmnt = "select bot_id from bot where bot_status=0" ;
+		$stmnt = "select bot_id from bot where bot_status=1" ;
 		$result = $X->fireQuery($stmnt);
 		
 		while($row = mysql_fetch_array($result))
 		{
-				echo "<li><h3>{$row['bot_id']}</h3></li>";
+				echo "<li><h3 id='bot{$row['bot_id']}' style='color:red;' >{$row['bot_id']}</h3></li>";
 		}
 		
 		$X->closeConnection($con);

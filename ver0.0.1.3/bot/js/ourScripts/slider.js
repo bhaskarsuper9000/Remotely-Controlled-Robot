@@ -1,7 +1,7 @@
 $(function() {
 	$( "#tabs" ).tabs();
 });
-	
+
 $(function() {
 	$( "#left_slider-vertical" ).slider({
 		orientation: "vertical",
@@ -14,6 +14,11 @@ $(function() {
 		}
 	});
 	$( "#left_amount" ).val( $( "#left_slider-vertical" ).slider( "value" ) );
+	
+	$("#left_slider-vertical").mouseup(function(){
+		$.post("./utilities/setVelocity.php",{ left_vel: $( "#left_slider-vertical" ).slider( "value" ), right_vel: -1 })
+	});
+
 });
 
 $(function() {
@@ -28,4 +33,8 @@ $(function() {
 		}
 	});
 	$( "#right_amount" ).val( $( "#right_slider-vertical" ).slider( "value" ) );
+	
+	$("#right_slider-vertical").mouseup(function(){
+		$.post("./utilities/setVelocity.php",{ left_vel: -1, right_vel: $( "#right_slider-vertical" ).slider( "value" ) })
+	});
 });

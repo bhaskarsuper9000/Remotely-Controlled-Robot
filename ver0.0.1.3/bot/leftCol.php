@@ -9,7 +9,7 @@
 			 				<div class="unit chatSize">
 		       		 		<h3>Online Bots</h3><hr/>
 		        				<ul id="avail">
-		        						<?php include('showAvailableBots.php');?>
+		        						<?php include('./utilities/showAvailableBots.php');?>
 		        				
 		        				</ul>
 	    	  				</div>			  
@@ -23,7 +23,7 @@
 			 				<div class="unit chatSize">
 		       		 		<h3>Bots in use</h3><hr/>
 		        					<ul id="botsInUse">
-		        						<?php include('showInUseBots.php');?>   				
+		        						<?php include('./utilities/showInUseBots.php');?>   				
 		        				</ul>
 	    	  				</div>			  
 						</div>				

@@ -49,7 +49,7 @@
 										<div class="unit loginContent"> <input type="text" name="uid" value="" id="uid" size="21"/>  </div>	
 										<div class="unit loginContent"><b>Password</b> </div>	
 										<div class="unit loginContent"><input type="password" name="pswd" value="" id="pswd" size="21"/>  </div>	
-										<div class="unit loginBoxButton"><button type="submit" id="submit" style="height: 25px; width: 132px" formaction="checkAuthentication.php"formmethod="post">Login</button></div>
+										<div class="unit loginBoxButton"><button type="submit" id="submit" style="height: 25px; width: 132px" formaction="checkAuthentication.php" formmethod="post">Login</button></div>
 									</form>
 							
 								</div>		        
