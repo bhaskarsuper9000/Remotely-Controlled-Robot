@@ -17,8 +17,9 @@ function ajaxSuccess()
 {
 	/*AJAX Funcion*/
 	$.ajax({                                      
-		url: './utilities/getChord.php',              //the script to call to get data          
-		data: "",                        //you can insert url argumnets here to pass to api.php...for example "id=5&parent=6"
+		url: './utilities/getChord.php',              //the script to call to get data
+		type:'POST',
+		data: {'botId': botId},                    //you can insert url argumnets here to pass to api.php...for example "id=5&parent=6"
 		dataType: 'json',                //data format      
 		success: function(data)          //on recieve of reply
 		{
@@ -40,7 +41,7 @@ function move(deltaX, deltaY) {
 	$.ajax({
 		url:'./utilities/DBwrite.php',
 		type:'POST',
-		data:{'x':deltaX, 'y':deltaY},
+		data:{'botId': botId, 'x':deltaX, 'y':deltaY},
 		success:setTimeout('ajaxSuccess()',1000)
 	});
 }

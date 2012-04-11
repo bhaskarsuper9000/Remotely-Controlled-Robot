@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="./css/demos.css"-->
 
 <!--The 2 css files & the inline CSS below handle the theming. Comment them and decomment the above 2 links to activate disable theme-->
-<link type="text/css" rel="stylesheet" href="http://jqueryui.com/themes/base/ui.all.css" />
+<!--link type="text/css" rel="stylesheet" href="http://jqueryui.com/themes/base/ui.all.css" /-->
 <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
 <style type="text/css">
 			/*demo page css*/

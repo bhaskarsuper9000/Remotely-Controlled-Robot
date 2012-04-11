@@ -39,14 +39,19 @@ window.onload = function(){
 	/*AJAX Funcion*/
 	$.ajax({                                      
 		url: './utilities/getChord.php',              //the script to call to get data          
-		data: "",                        //you can insert url argumnets here to pass to api.php...for example "id=5&parent=6"
+		type:'POST',
+		data: {'botId': botId},                        //you can insert url argumnets here to pass to api.php...for example "id=5&parent=6"
 		dataType: 'json',                //data format      
 		success: function(data)          //on recieve of reply
 		{
-			botInfo = data;
-			x = parseInt(data[4]);              //get id
-			y = parseInt(data[5]);           //get name
-			draw(scale, x, y);
+			if(data != ""){
+				botInfo = data;
+			}else{
+				//alert ('Nothing received :P :P');  //these if-else will prevent some variables being set to NaN 
+			}
+			//x = parseInt(data[4]);              //get id
+			//y = parseInt(data[5]);           //get name
+			//draw(scale, x, y);
 		} 
 	});
 	/*AJAX Function END*/

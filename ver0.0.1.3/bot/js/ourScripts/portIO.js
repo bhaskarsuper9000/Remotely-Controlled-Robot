@@ -174,8 +174,8 @@ $(function(){
     var value_eight = new Array(0,0,0,0,0,0,0,0);	
     var port_names = new Array("#porta","#portb","#portc","#portd","#porte","#portf","#portg","#porth","#porti","#portj","#portk","#portl") ;	
 		var i, j ;
-		var k,m  = 0;
-	/*	for(k = 0 ; k < 12 ; k ++)
+		var k,m  = 8;
+		for(k = 0 ; k < 12 ; k ++)
 		{
 			
 				if( $('#a'+((k*m)+1)).attr('checked')||$('#a'+ ((k*m)+2)).attr('checked')||$('#a'+((k*m)+3)).attr('checked')||$('#a'+((k*m)+4)).attr('checked')
@@ -192,192 +192,14 @@ $(function(){
 					for(i = 0 ; i < 8 ; i ++)
 						value_eight[i] = 0 ;
 						
-						m = m + 8 ;			
+						//m = m + 8 ;			
 			 }
 			 else
 			 {
 			 		var zero = 0 ;
 			 		$(port_names[k]).val(zero);
 			 }
-		} */
-		
-		
-		
-		
-			if( $('#a1').attr('checked')||$('#a2').attr('checked')||$('#a3').attr('checked')||$('#a4').attr('checked')
-		||$('#a5').attr('checked')||$('#a6').attr('checked')||$('#a7').attr('checked')||$('#a8').attr('checked') )
-		{
-				j = 1 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#porta');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-	
-			if( $('#a9').attr('checked')||$('#a10').attr('checked')||$('#a11').attr('checked')||$('#a12').attr('checked')
-		||$('#a13').attr('checked')||$('#a14').attr('checked')||$('#a15').attr('checked')||$('#a16').attr('checked') )
-		{
-				j = 9 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portb');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-		
-		if( $('#a17').attr('checked')||$('#a18').attr('checked')||$('#a19').attr('checked')||$('#a20').attr('checked')
-		||$('#a21').attr('checked')||$('#a22').attr('checked')||$('#a23').attr('checked')||$('#a24').attr('checked') )
-		{
-				j = 17 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portc');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-		
-		if( $('#a25').attr('checked')||$('#a26').attr('checked')||$('#a27').attr('checked')||$('#a28').attr('checked')
-		||$('#a29').attr('checked')||$('#a30').attr('checked')||$('#a31').attr('checked')||$('#a32').attr('checked') )
-		{
-				j = 25 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portd');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-		
-/*---------------------------------------------------------------------------------------------------------*/
-		
-		if( $('#a33').attr('checked')||$('#a34').attr('checked')||$('#a35').attr('checked')||$('#a36').attr('checked')
-		||$('#a37').attr('checked')||$('#a38').attr('checked')||$('#a39').attr('checked')||$('#a40').attr('checked') )
-		{
-				j = 33 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#porte');
-				//resetPORTvalue();
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-				
-		} 
-		
-		if( $('#a41').attr('checked')||$('#a42').attr('checked')||$('#a43').attr('checked')||$('#a44').attr('checked')
-		||$('#a45').attr('checked')||$('#a46').attr('checked')||$('#a47').attr('checked')||$('#a48').attr('checked') )
-		{
-				j = 41 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portf');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-		
-		if( $('#a49').attr('checked')||$('#a50').attr('checked')||$('#a51').attr('checked')||$('#a52').attr('checked')
-		||$('#a53').attr('checked')||$('#a54').attr('checked')||$('#a55').attr('checked')||$('#a56').attr('checked') )
-		{
-				j = 49 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portg');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-		
-		if( $('#a57').attr('checked')||$('#a58').attr('checked')||$('#a59').attr('checked')||$('#a60').attr('checked')
-		||$('#a61').attr('checked')||$('#a62').attr('checked')||$('#a63').attr('checked')||$('#a64').attr('checked') )
-		{
-				j = 57 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#porth');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 		
-	/*-------------------------------------------------------------------------------------------------------*/
-	
-	 if( $('#a65').attr('checked')||$('#a66').attr('checked')||$('#a67').attr('checked')||$('#a68').attr('checked')
-		||$('#a69').attr('checked')||$('#a70').attr('checked')||$('#a71').attr('checked')||$('#a72').attr('checked') )
-		{
-				j = 65 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#porti');
-				//resetPORTvalue();
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-				
-		} 
-		
-		if( $('#a73').attr('checked')||$('#a74').attr('checked')||$('#a75').attr('checked')||$('#a76').attr('checked')
-		||$('#a77').attr('checked')||$('#a78').attr('checked')||$('#a79').attr('checked')||$('#a80').attr('checked') )
-		{
-				j = 73 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portj');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-		
-		if( $('#a81').attr('checked')||$('#a82').attr('checked')||$('#a83').attr('checked')||$('#a84').attr('checked')
-		||$('#a85').attr('checked')||$('#a86').attr('checked')||$('#a87').attr('checked')||$('#a88').attr('checked') )
-		{
-				j = 81 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portk');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
-		
-		if( $('#a89').attr('checked')||$('#a90').attr('checked')||$('#a91').attr('checked')||$('#a92').attr('checked')
-		||$('#a93').attr('checked')||$('#a94').attr('checked')||$('#a95').attr('checked')||$('#a96').attr('checked') )
-		{
-				j = 89 ;
-				for(i = 0 ; i < 8 ; i ++ )
-				{
-					if($('#a'+j).attr('checked')) value_eight[ i ] = 1 ;
-					j ++ ;
-				}
-				calculatePORTvalue(value_eight,'#portl');
-				for(i = 0 ; i < 8 ; i ++)
-					value_eight[i] = 0 ;
-		} 
+		}
 				
 	});
 

@@ -44,7 +44,7 @@
 							<h3>Login | <span class="registerDesign"><a href="register.php">Register</a></span> <span style="font-size:10px;"> if new</span></h3><hr/>
 						
 								<div class="line">
-											<form>
+											<form method="POST" action="checkAuthentication.php">
 												<div class="unit loginContent"><b>UserID</b> </div>	
 										<div class="unit loginContent"> <input type="text" name="uid" value="" id="uid" size="21"/>  </div>	
 										<div class="unit loginContent"><b>Password</b> </div>	
