@@ -62,7 +62,8 @@ function readValues()
 {
 	$.ajax({                                      
 		url: './utilities/getChord.php',              //the script to call to get data          
-		data: "",                        //you can insert url argumnets here to pass to api.php...for example "id=5&parent=6"
+		type:'POST',
+		data: {'botId': botId},
 		dataType: 'json',                //data format      
 		success: function(data)          //on recieve of reply
 		{
@@ -85,7 +86,7 @@ function readValues()
 
 $(function(){
 	$("#read").click(function(){					
-		$.post("./utilities/requestPortValues.php",function(){
+		$.post("./utilities/requestPortValues.php",{ botId: botId },function(){
 			setTimeout("readValues()",1000)
 		});															
 	});
@@ -93,7 +94,7 @@ $(function(){
 
 $(function(){
 	$("#update").click(function(){						
-		$.post("./utilities/sendPortValues.php",{ porta:$("#porta").val(), portb:$("#portb").val(), portc:$("#portc").val(), 
+		$.post("./utilities/sendPortValues.php",{ botId:botId, porta:$("#porta").val(), portb:$("#portb").val(), portc:$("#portc").val(), 
 												  portd:$("#portd").val(), porte:$("#porte").val(), portf:$("#portf").val(),
 												  portg:$("#portg").val(), porth:$("#porth").val(), porti:$("#porti").val(),
 												  portj:$("#portj").val(), portk:$("#portk").val(), portl:$("#portl").val() 
@@ -103,7 +104,7 @@ $(function(){
 
 $(function(){
 	$("#send").click(function(){							
-		$.post("./utilities/printString.php",{ sendString:$("#sendString").val()
+		$.post("./utilities/printString.php",{ botId:botId, sendString:$("#sendString").val()
 		});   
 	});
 	

@@ -8,7 +8,7 @@
 		$t = date("Y:m:d H:i:s");
 		$user = $_SESSION['uid'];
 
-		$botid= 100; // BIGGEST THING TO BE DONE.......... for multiple bots i.e. scalability.
+		$botid= $_POST['botId'];
 
 	  require('../Database.php');
 		$X = new DatabaseCon();

@@ -5,7 +5,7 @@
 	{
 		$x = htmlentities($_POST['x']);
 		$y = htmlentities($_POST['y']);
-	
+		$botid= $_POST['botId'];
 		
 		if(($x != null && $y != null))
 		{
@@ -41,8 +41,6 @@
 		
 			$t = date("Y:m:d H:i:s");
 			$user = $_SESSION['uid'];
-
-			$botid= 100; // BIGGEST THING TO BE DONE.......... for multiple bots i.e. scalability.
 
 			if((strcmp($action,'@')))
 			{
