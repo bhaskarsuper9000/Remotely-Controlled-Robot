@@ -44,12 +44,12 @@
 							<h3>Login | <span class="registerDesign"><a href="register.php">Register</a></span> <span style="font-size:10px;"> if new</span></h3><hr/>
 						
 								<div class="line">
-											<form>
+											<form method="POST" action="checkAuthentication.php">
 												<div class="unit loginContent"><b>UserID</b> </div>	
 										<div class="unit loginContent"> <input type="text" name="uid" value="" id="uid" size="21"/>  </div>	
 										<div class="unit loginContent"><b>Password</b> </div>	
 										<div class="unit loginContent"><input type="password" name="pswd" value="" id="pswd" size="21"/>  </div>	
-										<div class="unit loginBoxButton"><button type="submit" id="submit" style="height: 25px; width: 132px" formaction="checkAuthentication.php"formmethod="post">Login</button></div>
+										<div class="unit loginBoxButton"><button type="submit" id="submit" style="height: 25px; width: 132px" formaction="checkAuthentication.php" formmethod="post">Login</button></div>
 									</form>
 							
 								</div>		        
@@ -64,16 +64,18 @@
 					</div>
 		
 				<!-- ====================================================================================================== -->	
-				
-						<div class="main">
+				<br>
+						<div class="sep"></div>
+						<div class="main" style="border-radius: 5px; height:auto; width:300px;" >
 							<!--MAIN content starts here !! -->
-							main
+							<img src="./images/spark.jpg" alt="SPARK-V" >
+							
 					</div>
 				<!-- ====================================================================================================== -->	
 				</div>
 			<!-- ====================================================================================================== -->	
 				<div class="foot">
-		
+						<p>SPARK V</p>
 				</div>	
 	
 			</div>
