@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	   char *database = "zandu";
 
 
-	   int i, n,cport_nr=16,        /* /dev/ttyS0 (COM1 on windows) */bdrate=9600;       /* 9600 baud */
+	   int i, n,cport_nr=17,        /* /dev/ttyS0 (COM1 on windows) */bdrate=9600;       /* 9600 baud */
 
 	   unsigned char buf[4096];
 	   char sensorValueQuery[200], registerQuery[200];
@@ -104,7 +104,7 @@ int main(int argc, char *argv[])
 					//exit(1);
 				}
 				
-				sprintf(registerQuery,"insert into botinfo values (\'%d\',\'%d\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",botId,1101, "0:0:0:0:0:0:0:0:0", "0:0:0:0:0:0:0:0:0:0:0:0", "0", "0", "10", "10");
+				sprintf(registerQuery,"insert into botinfo values (\'%d\',\'%d\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\',\'%s\')",botId,1101, "0:0:0:0:0:0:0:0:0", "0:0:0:0:0:0:0:0:0:0:0:0", "0","0", "0","10", "10", "0", "0");
 			
 				if (mysql_query(con,registerQuery)) 
 				{
@@ -129,13 +129,14 @@ int main(int argc, char *argv[])
 				}
 				sensorValues[j] = '\0';		//else garbage values can go into a database
 				
-				if(sensorValues[0] == 'S'){
-					sprintf(sensorValueQuery,"update botinfo set sensor=\'%s\' where bot_id = \'%d\' ;",sensorValues+2,botId);
+				if(sensorValues[2] == 'S'){
+					sprintf(sensorValueQuery,"update botinfo set sensor=\'%s\' where bot_id = \'%d\' ;",sensorValues+4,sensorValues[0]);
+					//puts(sensorValues);
 				}
-				else if(sensorValues[0] == 'P'){
-					sprintf(sensorValueQuery,"update botinfo set port_io=\'%s\' where bot_id = \'%d\' ;",sensorValues+2,botId);
+				else if(sensorValues[2] == 'P'){
+					sprintf(sensorValueQuery,"update botinfo set port_io=\'%s\' where bot_id = \'%d\' ;",sensorValues+4,sensorValues[0]);
 				}
-				
+			// 0 replaced by 2||sensorValues + 2 repalce by sensorValues + 4 || botID replaced by sensorValues[0] || %d replaced by %c
 				if (mysql_query(con,sensorValueQuery)) 
 				{
 					printf("%s\n",sensorValueQuery);

@@ -77,10 +77,10 @@
 								<input type="button" id="read" value="READ" style="height: 25px; width: 90px"/>
 								<input type="button" id="update" value="WRITE" style="height: 25px; width: 90px"/>
 							</div>
-							<div class="port"> <center><font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">PORT VALUES</font></center>
+							<div class="port"> <center><font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">DDR VALUES</font></center>
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTA :</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRA :</font> 
 										&nbsp;&nbsp;<input type="text" id="porta" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a1"/>
@@ -93,7 +93,7 @@
 										<input type="checkbox" name="" value="" id="a8"/>
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTB :</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRB :</font> 
 										&nbsp;&nbsp;<input type="text" id="portb" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a9"/>
@@ -106,7 +106,7 @@
 										<input type="checkbox" name="" value="" id="a16"/>
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTC :</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRC :</font> 
 										&nbsp;&nbsp;<input type="text" id="portc" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a17"/>
@@ -119,7 +119,7 @@
 										<input type="checkbox" name="" value="" id="a24"/>
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTD :</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRD :</font> 
 										&nbsp;&nbsp;<input type="text" id="portd" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a25"/>
@@ -189,10 +189,10 @@
 										<hr style="margin-bottom:5px;margin-top:5px;">
 							</div>	
 							
-							<div class="port"> <center><font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">DDR VALUES</font></center>
+							<div class="port"> <center><font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">PORT VALUES</font></center>
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRA :&nbsp;&nbsp;&nbsp;</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTA :&nbsp;&nbsp;&nbsp;</font> 
 										&nbsp;&nbsp;<input type="text" id="porti" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a65"/>
@@ -205,7 +205,7 @@
 										<input type="checkbox" name="" value="" id="a72"/>	
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRB :&nbsp;&nbsp;&nbsp;</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTB :&nbsp;&nbsp;&nbsp;</font> 
 										&nbsp;&nbsp;<input type="text" id="portj" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a73"/>
@@ -218,7 +218,7 @@
 										<input type="checkbox" name="" value="" id="a80"/>
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRC :&nbsp;&nbsp;&nbsp;</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTC :&nbsp;&nbsp;&nbsp;</font> 
 										&nbsp;&nbsp;<input type="text" id="portk" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a81"/>
@@ -231,7 +231,7 @@
 										<input type="checkbox" name="" value="" id="a88"/>
 									<br><hr style="margin-bottom:5px;margin-top:5px;">
 									
-									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;DDRD :&nbsp;&nbsp;&nbsp;</font> 
+									<font style="color:#DF2B72;font-size:123.1%;font-style:normal;font-weight:normal;">&nbsp;&nbsp;PORTD :&nbsp;&nbsp;&nbsp;</font> 
 										&nbsp;&nbsp;<input type="text" id="portl" value="undefined" />
 										&nbsp;&nbsp;
 										<input type="checkbox" name="" value="" id="a89"/>

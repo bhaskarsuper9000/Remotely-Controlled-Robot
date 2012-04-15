@@ -3,6 +3,7 @@
 #include "rs232.c"
 #include <mysql.h>
 #include<time.h>
+#include<string.h>
 
 
 void delay_in_sec(int delay) //delay in seconds
@@ -29,7 +30,7 @@ int main()
 
 
 	// initiate the com port 
-  int i, n,cport_nr=16,/* /dev/ttyS0 (COM1 on windows) */  bdrate=9600;       /* 9600 baud */
+  int i, n,cport_nr=17,/* /dev/ttyS0 (COM1 on windows) */  bdrate=9600;       /* 9600 baud */
   if(OpenComport(cport_nr, bdrate))
   {
     printf("Can not open comport\n");
@@ -71,11 +72,23 @@ int main()
 		while( (row = mysql_fetch_row(res) ) != NULL )
 		{
 			
-			printf("%s\t %d \t %s\n",row[3],i,row[2]);
+			printf("%s\t %s\t %d \t %s\n",row[0],row[3],i,row[2]);
 
 			int n , j ;
+			
+			int length = strlen(row[0]);
+			
+			for(j = 0 ; j < length  ; j ++)
+			{
+				n = SendByte(cport_nr,row[0][j]) ;
+				
+			}
+			
+			n = SendByte(cport_nr,':') ;	//To seperate ID from Command 
+			
+			length = strlen(row[3]);
 
-			for(j = 0 ; j < 2 ; j ++)
+			for(j = 0 ; j < length  ; j ++)
 			{
 				n = SendByte(cport_nr,row[3][j]) ;
 				

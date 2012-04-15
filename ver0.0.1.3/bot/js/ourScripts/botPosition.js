@@ -88,8 +88,8 @@ function calcBotPosition(){
 	
 	//new code that handles only ideal cases (constants choosen from Spark V manual)
 	//convert back to mm
-	botX = botX * 10;	//in cm
-	botY = botY * 10;	//in cm
+	//botX = botX * 10;	//in cm
+//	botY = botY * 10;	//in cm
 	
 	
 	if( (prevActionTaken.x == 0 ) && (prevActionTaken.y == -4) ){			//forward
@@ -97,8 +97,8 @@ function calcBotPosition(){
 			lCount = avg(lCount,rCount);
 			tempDist = parseFloat(lCount) * 12.92;	//in mm
 			
-			botX = botX + tempDist * Math.cos(alpha);
-			botY = botY + tempDist * Math.sin(alpha); 
+			botX = botX + (tempDist * Math.cos(alpha));
+			botY = botY + (tempDist * Math.sin(alpha));
 			
 	}
 	else if( (prevActionTaken.x == 0) && (prevActionTaken.y == 4) ){		//backward
@@ -107,29 +107,29 @@ function calcBotPosition(){
 			tempDist = parseFloat(lCount) * 12.92;	//in mm
 			
 			botX = botX - tempDist * Math.cos(alpha);
-			botY = botY - tempDist * Math.sin(alpha);		
+			botY = botY - tempDist * Math.sin(alpha);
 			
 	}
 	else if( (prevActionTaken.x == -4) && (prevActionTaken.y == 0) ){		//left
 	
 			lCount = avg(lCount,rCount);
-			alpha = parseFloat(alpha) + (parseFloat(lCount) * 12.85 * Math.PI / 180);	//in radians
+			alpha = (parseFloat(alpha) + (parseInt(lCount) * 12.85 * Math.PI / 180));	//in radians
 
 	}
 	else if( (prevActionTaken.x == 4) && (prevActionTaken.y == 0) ){		//right
 
 			lCount = avg(lCount,rCount);
-			alpha = parseFloat(alpha) - (parseFloat(lCount) * 12.85 * Math.PI / 180);	//in radians
+			alpha = parseFloat(alpha) - (parseInt(lCount) * 12.85 * Math.PI / 180);	//in radians
 
 	}
 	
 	//wrap angle
-	alpha %= 2*Math.PI;
+	//alpha %= 2*Math.PI;
 	
 	
 	//convert back to mm
-	botX /= 10;	//in cm
-	botY /= 10;	//in cm
+	//botX /= 10;	//in cm
+//	botY /= 10;	//in cm
 	
 	
 /*	var newBotInfo = "";

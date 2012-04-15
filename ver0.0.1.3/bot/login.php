@@ -7,7 +7,7 @@
 	<html xmlns="http://www.w3.org/1999/xhtml">
 		<head>
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-			<title> Firebird V Login </title>
+			<title> SPARK V Login </title>
 			<link rel="stylesheet" type="text/css" media="all"  href="./css/libraries.css" />
 			<link rel="stylesheet" type="text/css" media="all"  href="./css/template.css" />
 			<link rel="stylesheet" type="text/css" media="all" href="./css/content.css" />

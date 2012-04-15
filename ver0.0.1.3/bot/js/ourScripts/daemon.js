@@ -22,5 +22,5 @@ function updateBotList(){
 }
 
 $(document).ready(function() {
-	self.setInterval('updateBotList()',50000);	//long delay added to time being so as to prevent overload during testing
+	self.setInterval('updateBotList()',5000);	//long delay added to time being so as to prevent overload during testing
 });

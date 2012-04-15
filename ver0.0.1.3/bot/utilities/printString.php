@@ -16,7 +16,7 @@
 				$con = $X->connect();
 	
 				$X->selectDB("zandu",$con);
-	
+				
 				$stmnt = "insert into sendtobot values('{$botid}','{$user}','{$t}','{$lcd_print}')";
 	
 				$X->fireQuery($stmnt);
