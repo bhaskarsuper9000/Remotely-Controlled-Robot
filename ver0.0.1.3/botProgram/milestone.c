@@ -43,45 +43,45 @@ unsigned char bot_id = 'A';
 //Function to configure INT1 (PORTD 3) pin as input for the left position encoder
 void left_encoder_pin_config (void)
 {
- DDRD  = DDRD & 0xF7;  //Set the direction of the PORTD 3 pin as input
- PORTD = PORTD | 0x08; //Enable internal pull-up for PORTD 3 pin
+	 DDRD  = DDRD & 0xF7;  //Set the direction of the PORTD 3 pin as input
+	 PORTD = PORTD | 0x08; //Enable internal pull-up for PORTD 3 pin
 }
 
 //Function to configure INT0 (PORTD 2) pin as input for the right position encoder
 void right_encoder_pin_config (void)
 {
- DDRD  = DDRD & 0xFB;  //Set the direction of the PORTD 2 pin as input
- PORTD = PORTD | 0x04; //Enable internal pull-up for PORTD 2 pin
+	 DDRD  = DDRD & 0xFB;  //Set the direction of the PORTD 2 pin as input
+	 PORTD = PORTD | 0x04; //Enable internal pull-up for PORTD 2 pin
 }
 
 void left_position_encoder_interrupt_init (void) //Interrupt 1 enable
 {
- cli(); //Clears the global interrupt
- MCUCR = MCUCR | 0x08; // INT1 is set to trigger with falling edge
- GICR = GICR | 0x80;   // Enable Interrupt INT1 for left position encoder
- sei(); // Enables the global interrupt 
+	 cli(); //Clears the global interrupt
+	 MCUCR = MCUCR | 0x08; // INT1 is set to trigger with falling edge
+	 GICR = GICR | 0x80;   // Enable Interrupt INT1 for left position encoder
+	 sei(); // Enables the global interrupt 
 }
 
 void right_position_encoder_interrupt_init (void) //Interrupt 0 enable
 {
- cli(); //Clears the global interrupt
- MCUCR = MCUCR | 0x02; // INT0 is set to trigger with falling edge
- GICR = GICR | 0x40;   // Enable Interrupt INT5 for right position encoder
- sei(); // Enables the global interrupt 
+	 cli(); //Clears the global interrupt
+	 MCUCR = MCUCR | 0x02; // INT0 is set to trigger with falling edge
+	 GICR = GICR | 0x40;   // Enable Interrupt INT5 for right position encoder
+	 sei(); // Enables the global interrupt 
 }
 
 //ISR for right position encoder
 ISR(INT0_vect)  
 {
- ShaftCountRight++;  //increment right shaft position count
- rCount++;
+	 ShaftCountRight++;  //increment right shaft position count
+	 rCount++;
 }
 
 //ISR for left position encoder
 ISR(INT1_vect)
 {
- ShaftCountLeft++;  //increment left shaft position count
- lCount++;
+	 ShaftCountLeft++;  //increment left shaft position count
+	 lCount++;
 }
 
 
@@ -95,28 +95,28 @@ void resetShaftCount()
 
 void lcd_port_config (void)
 {
- DDRC = DDRC | 0xF7;    //all the LCD pin's direction set as output
- PORTC = PORTC & 0x80;  // all the LCD pins are set to logic 0 except PORTC 7
+	 DDRC = DDRC | 0xF7;    //all the LCD pin's direction set as output
+	 PORTC = PORTC & 0x80;  // all the LCD pins are set to logic 0 except PORTC 7
 }
 
 void adc_pin_config (void)
 {
- DDRA = 0x00;  //set PORTA direction as input
- PORTA = 0x00; //set PORTA pins floating
+	 DDRA = 0x00;  //set PORTA direction as input
+	 PORTA = 0x00; //set PORTA pins floating
 }
 
 void motion_pin_config (void)
 {
- DDRB = DDRB | 0x0F;   //set direction of the PORTB3 to PORTB0 pins as output
- PORTB = PORTB & 0xF0; // set initial value of the PORTB3 to PORTB0 pins to logic 0
- DDRD = DDRD | 0x30;   //Setting PD4 and PD5 pins as output for PWM generation
- PORTD = PORTD | 0x30; //PD4 and PD5 pins are for velocity control using PWM
+	 DDRB = DDRB | 0x0F;   //set direction of the PORTB3 to PORTB0 pins as output
+	 PORTB = PORTB & 0xF0; // set initial value of the PORTB3 to PORTB0 pins to logic 0
+	 DDRD = DDRD | 0x30;   //Setting PD4 and PD5 pins as output for PWM generation
+	 PORTD = PORTD | 0x30; //PD4 and PD5 pins are for velocity control using PWM
 }
 
 void buzzer_pin_config (void)
 {
- DDRC = DDRC | 0x08;		//Setting PORTC 3 as outpt
- PORTC = PORTC & 0xF7;		//Setting PORTC 3 logic low to turnoff buzzer
+	 DDRC = DDRC | 0x08;		//Setting PORTC 3 as outpt
+	 PORTC = PORTC & 0xF7;		//Setting PORTC 3 logic low to turnoff buzzer
 }
 
 void port_init()
@@ -131,21 +131,21 @@ void port_init()
 
 void adc_init()
 {
- ADCSRA = 0x00;
- ADMUX = 0x20;		//Vref=5V external --- ADLAR=1 --- MUX4:0 = 0000
- ACSR = 0x80;
- ADCSRA = 0x86;		//ADEN=1 --- ADIE=1 --- ADPS2:0 = 1 1 0
+	 ADCSRA = 0x00;
+	 ADMUX = 0x20;		//Vref=5V external --- ADLAR=1 --- MUX4:0 = 0000
+	 ACSR = 0x80;
+	 ADCSRA = 0x86;		//ADEN=1 --- ADIE=1 --- ADPS2:0 = 1 1 0
 }
 
 
 void uart0_init(void)
 {
- UCSRB = 0x00; //disable while setting baud rate
- UCSRA = 0x00;
- UCSRC = 0x86;
- UBRRL = 0x2F; //set baud rate lo  //67 is for 16MHz 9600 baudrate
- UBRRH = 0x00; //set baud rate hi
- UCSRB = 0x98; 
+	 UCSRB = 0x00; //disable while setting baud rate
+	 UCSRA = 0x00;
+	 UCSRC = 0x86;
+	 UBRRL = 0x2F; //set baud rate lo  //67 is for 16MHz 9600 baudrate
+	 UBRRH = 0x00; //set baud rate hi
+	 UCSRB = 0x98; 
 }
 
 void init_devices()
@@ -153,7 +153,7 @@ void init_devices()
 	cli();         //Clears the global interrupts
  	port_init();
 	lcd_set_4bit();
-    lcd_init();
+    	lcd_init();
 	adc_init();
  	uart0_init();
 	left_position_encoder_interrupt_init();
@@ -173,69 +173,69 @@ void USART_Transmit(char data )
 
 SIGNAL(SIG_UART_RECV) 
 {
- unsigned char receive_data=0;   // used to save Receiving data
-
- receive_data = UDR ;
-
- if(PORT_VAL_AVAIL)
- {
- 	if(receive_data == '#')
-	{
-		PORT_VAL_AVAIL =  0;
-		START_SETTING_PORT_VALUES = 1 ;
-	}
-
-	newPortValues[portCount % 51] = receive_data ;
-	UDR = receive_data;
-	portCount ++ ;
- }
-
- if(PRINT_ON_LCD)
- {
- 	if(receive_data == '#')
-	{
-		PRINT_ON_LCD =  0;
-		START_PRINTING_ON_LCD = 1 ;
-	}
-
-	LCD_PRINT[charCount % 16] = receive_data ;
-	UDR = receive_data ;
-	charCount ++ ;
-
- }
- else
- {
- 	
- 	COMMAND[count % 2] = receive_data ;
-	count ++ ;
- }
+	 unsigned char receive_data=0;   // used to save Receiving data
+	
+	 receive_data = UDR ;
+	
+	 if(PORT_VAL_AVAIL)
+	 {
+	 	if(receive_data == '#')
+		{
+			PORT_VAL_AVAIL =  0;
+			START_SETTING_PORT_VALUES = 1 ;
+		}
+	
+		newPortValues[portCount % 51] = receive_data ;
+		UDR = receive_data;
+		portCount ++ ;
+	 }
+	
+	 if(PRINT_ON_LCD)
+	 {
+	 	if(receive_data == '#')
+		{
+			PRINT_ON_LCD =  0;
+			START_PRINTING_ON_LCD = 1 ;
+		}
+	
+		LCD_PRINT[charCount % 16] = receive_data ;
+		UDR = receive_data ;
+		charCount ++ ;
+	
+	 }
+	 else
+	 {
+	 	
+	 	COMMAND[count % 2] = receive_data ;
+		count ++ ;
+	 }
 
 }
 
 void sendSensorValues()
 {
-  USART_Transmit('S');
-  USART_Transmit(':');
-  int sensor_number  = 0;
-  for(sensor_number = 0 ; sensor_number < 7 ; sensor_number ++)
-  {
-  		
-  		 ADC_Value = ADC_Conversion(sensor_number);
- 
- 		 //lcd_print(row, coloumn, ADC_Value, 3);
- 
+	 USART_Transmit('S');
+	 USART_Transmit(':');
+	 int sensor_number  = 0;
+	 for(sensor_number = 0 ; sensor_number < 7 ; sensor_number ++)
+	 {
+	  		
+		 ADC_Value = ADC_Conversion(sensor_number);
+	 
+		 //lcd_print(row, coloumn, ADC_Value, 3);
+	
  		int value = (int)(ADC_Value) ;
  		char temp [4] ;
  		itoa(value,temp,10);
 		sendString(temp);
-
+	
 		USART_Transmit(':');
-  }
-
+	  }
+	
 	char lcount[4],rcount[4];
 	itoa(lCount,lcount,10);
 	itoa(rCount,rcount,10);
-
+	
 	sendString(lcount);
 	USART_Transmit(':');
 	sendString(rcount);	
@@ -311,68 +311,68 @@ void sendPortValues()
 
 /*Handling of new PORT values received from server*/
 
-	void setPortValues()
-	{
+void setPortValues()
+{
 
-		char temp[4];
+	char temp[4];
 
 	/*	sendString(newPortValues) ;
 
-		sendString(strtok(newPortValues, ":"));*/
+	sendString(strtok(newPortValues, ":"));*/
 
+	
+	DDRA = atoi(strtok(newPortValues, ":"));		
+	itoa(DDRA,temp,10);
+	sendString(temp);
 		
-		DDRA = atoi(strtok(newPortValues, ":"));		
-		itoa(DDRA,temp,10);
-		sendString(temp);
-		
 
-		DDRB = atoi(strtok(NULL, ":"));	
-		itoa(DDRB,temp,10);
-		sendString(temp);
+	DDRB = atoi(strtok(NULL, ":"));	
+	itoa(DDRB,temp,10);
+	sendString(temp);
 
-		DDRC = atoi(strtok(NULL, ":"));		
-		itoa(DDRC,temp,10);
-		sendString(temp);
+	DDRC = atoi(strtok(NULL, ":"));		
+	itoa(DDRC,temp,10);
+	sendString(temp);
 
-		DDRD = atoi(strtok(NULL, ":"));		
-		itoa(DDRD,temp,10);
-		sendString(temp);
+	DDRD = atoi(strtok(NULL, ":"));		
+	itoa(DDRD,temp,10);
+	sendString(temp);
 
-		PINA = atoi(strtok(NULL, ":"));
-		itoa(PINA,temp,10);
-		sendString(temp);
+	PINA = atoi(strtok(NULL, ":"));
+	itoa(PINA,temp,10);
+	sendString(temp);
 
-		PINB = atoi(strtok(NULL, ":"));
-		itoa(PINB,temp,10);
-		sendString(temp);
+	PINB = atoi(strtok(NULL, ":"));
+	itoa(PINB,temp,10);
+	sendString(temp);
 
-		PINC = atoi(strtok(NULL, ":"));
-		itoa(PINC,temp,10);
-		sendString(temp);
+	PINC = atoi(strtok(NULL, ":"));
+	itoa(PINC,temp,10);
+	sendString(temp);
 
-		PIND = atoi(strtok(NULL, ":"));
-		itoa(PIND,temp,10);
-		sendString(temp);
+	PIND = atoi(strtok(NULL, ":"));
+	itoa(PIND,temp,10);
+	sendString(temp);
 			
-		PORTA = atoi(strtok(NULL, ":"));
-		itoa(PORTA,temp,10);
-		sendString(temp);
+	PORTA = atoi(strtok(NULL, ":"));
+	itoa(PORTA,temp,10);
+	sendString(temp);
 
-		PORTB = atoi(strtok(NULL, ":"));
-		itoa(PORTB,temp,10);
-		sendString(temp);
+	PORTB = atoi(strtok(NULL, ":"));
+	itoa(PORTB,temp,10);
+	sendString(temp);
 
-		PORTC = atoi(strtok(NULL, ":"));
-		itoa(PORTC,temp,10);
-		sendString(temp);
+	PORTC = atoi(strtok(NULL, ":"));
+	itoa(PORTC,temp,10);
+	sendString(temp);
 
-		PORTD = atoi(strtok(NULL, "#"));	
-		itoa(PORTD,temp,10);
-		sendString(temp);
+	PORTD = atoi(strtok(NULL, "#"));	
+	itoa(PORTD,temp,10);
+	sendString(temp);
 
 			
 
-	}
+}
 
 
 /* Port Handling Ends */
@@ -389,14 +389,14 @@ void resetCOMMAND()
 
 unsigned char ADC_Conversion(unsigned char Ch)
 {
- unsigned char a;
- Ch = Ch & 0x07;  			
- ADMUX= 0x20| Ch;	   		
- ADCSRA = ADCSRA | 0x40;		//Set start conversion bit
- while((ADCSRA&0x10)==0);	    //Wait for ADC conversion to complete
- a=ADCH;
- ADCSRA = ADCSRA|0x10;          //clear ADIF (ADC Interrupt Flag) by writing 1 to it
- return a;
+	 unsigned char a;
+	 Ch = Ch & 0x07;  			
+	 ADMUX= 0x20| Ch;	   		
+	 ADCSRA = ADCSRA | 0x40;		//Set start conversion bit
+	 while((ADCSRA&0x10)==0);	    //Wait for ADC conversion to complete
+	 a=ADCH;
+	 ADCSRA = ADCSRA|0x10;          //clear ADIF (ADC Interrupt Flag) by writing 1 to it
+	 return a;
 }
 
 void sendString(char id[10])
@@ -408,54 +408,54 @@ void sendString(char id[10])
 
 void motion_set (unsigned char Direction)
 {
- unsigned char PortBRestore = 0;
-
- Direction &= 0x0F; 			// removing upper nibbel as it is not needed
- PortBRestore = PORTB; 			// reading the PORTB's original status
- PortBRestore &= 0xF0; 			// setting lower direction nibbel to 0
- PortBRestore |= Direction; 	// adding lower nibbel for direction command and restoring the PORTB status
- PORTB = PortBRestore; 			// setting the command to the port
+	 unsigned char PortBRestore = 0;
+	
+	 Direction &= 0x0F; 			// removing upper nibbel as it is not needed
+	 PortBRestore = PORTB; 			// reading the PORTB's original status
+	 PortBRestore &= 0xF0; 			// setting lower direction nibbel to 0
+	 PortBRestore |= Direction; 	// adding lower nibbel for direction command and restoring the PORTB status
+	 PORTB = PortBRestore; 			// setting the command to the port	
 }
 
 void forward (void)         //both wheels forward
 {
-  motion_set(0x06);
+  	motion_set(0x06);
 }
 
 void backward (void)        //both wheels backward
 {
-  motion_set(0x09);
+  	motion_set(0x09);
 }
 
 void left (void)            //Left wheel backward, Right wheel forward
 {
-  motion_set(0x05);
+  	motion_set(0x05);
 }
 
 void right (void)           //Left wheel forward, Right wheel backward
 {   
-  motion_set(0x0A);
+ 	 motion_set(0x0A);
 }
 
 void stop (void)            //hard stop
 {
-  motion_set(0x00);
+  	motion_set(0x00);
 }
 
 void buzzer_on (void)
 {
- unsigned char port_restore = 0;
- port_restore = PINC;
- port_restore = port_restore | 0x08;
- PORTC = port_restore;
+	 unsigned char port_restore = 0;
+	 port_restore = PINC;
+	 port_restore = port_restore | 0x08;
+	 PORTC = port_restore;
 }
 
 void buzzer_off (void)
 {
- unsigned char port_restore = 0;
- port_restore = PINC;
- port_restore = port_restore & 0xF7;
- PORTC = port_restore;
+	 unsigned char port_restore = 0;
+	 port_restore = PINC;
+	 port_restore = port_restore & 0xF7;
+	 PORTC = port_restore;
 }
 
 void resetLCDArray()
@@ -479,7 +479,7 @@ void resetPORTArrayValues()
 } 
 void printOnLCD(char * text)
 {
-  lcd_string(text);
+  	lcd_string(text);
 }
 
 
