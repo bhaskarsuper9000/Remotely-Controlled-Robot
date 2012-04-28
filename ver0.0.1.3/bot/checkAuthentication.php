@@ -17,12 +17,15 @@
 		
 		$row = mysql_fetch_array($result);
 		
+		$userType = $row['type'];
+		
 		if( ($row['uid'] == $uid ) && ($row['password'] == $pswd) )
 		{
 				$stmnt = "update user set status=1 where uid='{$uid}' and password='{$pswd}'";
 				$X->fireQuery($stmnt);
 				session_start();
 				$_SESSION['uid'] = $uid;
+				$_SESSION['userType'] = $userType;
 				header('Location:index.php');
 		}
 		else

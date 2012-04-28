@@ -5,7 +5,22 @@
 	<div class="head">
 		<div class="line">
 			<div class="welcome">
-				<h3 >Welcome : <span style="font-weight:bold;"><?php echo strtoupper($_SESSION['uid']) ?></span></h3>
+				<h3 >Welcome : <span style="font-weight:bold;">
+					<?php 
+						echo strtoupper($_SESSION['uid']);
+						
+						if($_SESSION['userType'] == 'admin')
+						{
+							echo '<align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<a href="superUser.php"><font color="red">SETTINGS</font></a>';	
+						}
+						
+					?>
+								</span>
+				</h3>
 			</div>
 			
 			<div class="welcome">

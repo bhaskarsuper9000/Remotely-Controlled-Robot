@@ -14,6 +14,9 @@ function calcBotPosition(){
 	sensorVal = sensorVal.split(":");
 	lCount = sensorVal[7];
 	rCount = sensorVal[8];
+	
+	botX *= 10;	//in cm
+	botY *= 10;	//in cm
 
 //previous code that handled all the ideal as well as non-ideal cases
 /*
@@ -116,23 +119,23 @@ function calcBotPosition(){
 	else if( (prevActionTaken.x == -4) && (prevActionTaken.y == 0) ){		//left
 	
 			lCount = avg(lCount,rCount);
-			alpha = (parseFloat(alpha) + (parseInt(lCount) * 12.85 * Math.PI / 180));	//in radians
+			alpha = (parseFloat(alpha) - (parseInt(lCount) * 0.2244 ));	//in radians
 
 	}
 	else if( (prevActionTaken.x == 4) && (prevActionTaken.y == 0) ){		//right
 
 			lCount = avg(lCount,rCount);
-			alpha = parseFloat(alpha) - (parseInt(lCount) * 12.85 * Math.PI / 180);	//in radians
+			alpha = parseFloat(alpha) + (parseInt(lCount) * 0.2244 );	//in radians
 
 	}
 	
 	//wrap angle
-	//alpha %= 2*Math.PI;
+	alpha %= 2*Math.PI;
 	
 	
 	//convert back to mm
-	//botX /= 10;	//in cm
-//	botY /= 10;	//in cm
+	botX /= 10;	//in cm
+	botY /= 10;	//in cm
 	
 	
 /*	var newBotInfo = "";
