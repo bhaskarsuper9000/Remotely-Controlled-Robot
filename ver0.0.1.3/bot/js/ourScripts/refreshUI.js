@@ -1,5 +1,6 @@
 //some handy functions which are used during loading, unloading & refreshing the GUI
 function initWithDefaultValues(){
+	botId = -1;
 	botInfo = ["0", "0", "0:0:0:0:0:0:0:0:0", "0:0:0:0:0:0:0:0:0:0:0:0", "0","0", "0", "10", "10","0","0"];
 	x = 0;//142.5;
 	y = 0;//147.5;

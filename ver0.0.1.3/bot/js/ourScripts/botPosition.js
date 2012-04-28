@@ -8,6 +8,9 @@ function avg(a, b){
 function calcBotPosition(){
 
 	var sensorVal = botInfo[2];
+	
+	if(sensorVal == "")
+		return;
 	sensorVal = sensorVal.split(":");
 	lCount = sensorVal[7];
 	rCount = sensorVal[8];

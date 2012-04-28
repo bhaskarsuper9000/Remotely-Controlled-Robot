@@ -42,6 +42,6 @@ function move(deltaX, deltaY) {
 		url:'./utilities/DBwrite.php',
 		type:'POST',
 		data:{'botId': botId, 'x':deltaX, 'y':deltaY},
-		success:setTimeout('ajaxSuccess()',3000)
+		success:setTimeout('ajaxSuccess()',1000)
 	});
 }

@@ -23,14 +23,14 @@
 			$stmnt = "update botinfo set l_vel = '{$leftVelocity}' where bot_id= '{$botId}'";	
 			$X->fireQuery($stmnt);
 			if(intval($botId) != -1){
-				$stmnt = "insert into sendtobot values($botid,'{$user}','{$t}','{$leftVelocity}')";
+				$stmnt = "insert into sendtobot values($botId,'{$user}','{$t}','V#{$leftVelocity}#')";
 				$X->fireQuery($stmnt);
 			}		
 		}else if( intval($leftVelocity) == -1){
 			$stmnt = "update botinfo set r_vel = '{$rightVelocity}' where bot_id= '{$botId}'";	
 			$X->fireQuery($stmnt);
 			if(intval($botId) != -1){
-				$stmnt = "insert into sendtobot values($botid,'{$user}','{$t}','{$rightVelocity}')";
+				$stmnt = "insert into sendtobot values($botId,'{$user}','{$t}','C#{$rightVelocity}#')";
 				$X->fireQuery($stmnt);
 			}
 		}	

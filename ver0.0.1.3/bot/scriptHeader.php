@@ -22,6 +22,7 @@
 <script src="./js/ourScripts/portIO.js"></script>
 
 <script src="./js/ourScripts/refreshUI.js"></script>
+<script src="./js/ourScripts/init.js"></script>
 <script src="./js/ourScripts/botStatus.js"></script>
 
 

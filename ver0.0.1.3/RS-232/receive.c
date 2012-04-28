@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	   char *database = "zandu";
 
 
-	   int i, n,cport_nr=17,        /* /dev/ttyS0 (COM1 on windows) */bdrate=9600;       /* 9600 baud */
+	   int i, n,cport_nr=16,        /* /dev/ttyS0 (COM1 on windows) */bdrate=9600;       /* 9600 baud */
 
 	   unsigned char buf[4096];
 	   char sensorValueQuery[200], registerQuery[200];

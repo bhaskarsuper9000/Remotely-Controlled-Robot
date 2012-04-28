@@ -2,9 +2,12 @@ $(function(){
 	$("#avail li").live('click',function(){	
 		if(botId == -1){
 
-			b_val = $(this).text();
+
+			b_val = $(this).text();					
+			$(this).fadeOut();		
+
+			$.post("./utilities/updateSession.php",{id:'avail',b_name:b_val},function(data){		});
 								
-			$(this).fadeOut();							
 			$.post("updateBotStatus.php",{id:'avail',b_name:b_val},function(data){
 				//$("#botsInUse ").append(data);
 				updateBotList();
@@ -24,13 +27,16 @@ $(function(){
 		
 		if(botId == b_val){
 			$(this).fadeOut();
+			
+			$.post("./utilities/updateSession.php",{id:'botsInUse',b_name:b_val},function(data){		});
+			
 			$.post("updateBotStatus.php",{id:'botsInUse',b_name:b_val},function(data){
 				//$("#avail ").append(data);
 				updateBotList();
 			});
 			//updateBotList();
 			unloadBot();
-			botId = -1;
+			//botId = -1;
 			alert('Bot unloaded');
 		}else{
 			if(botId == -1){
