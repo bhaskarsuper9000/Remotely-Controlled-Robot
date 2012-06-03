@@ -41,7 +41,7 @@ Installation Instructions
 
 The video tutorial for the same is uploaded at the link as given below:
 
-[links](http://example.com) to all these software. 
+[Check out the detailed video on how to setup and install](http://youtu.be/lOhZG97SLrA) 
 
 
 References
